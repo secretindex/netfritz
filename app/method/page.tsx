@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 
@@ -16,24 +17,24 @@ const books = [
     title: "Livro 1",
     subtitle: "167 Exercícios",
     level: "Crook",
-    description: "Exercícios fundamentais focados em articulação, ritmo e destreza básica dos dedos em todas as tonalidades.",
-    href: "/method/kroepsch/1"
+    description: "Primeira parte do livro 416 Studies for Clarinet do Kroepsch. De C major até F# minor.",
+    href: "/method/kroepsch/book-1"
   },
   {
     id: 2,
     title: "Livro 2",
     subtitle: "183 Exercícios",
     level: "Trickster",
-    description: "Estudos mais avançados focados em fraseado, fluência técnica e ritmos complexos.",
-    href: "/method/kroepsch/2"
+    description: "Segunda parte do livro 416 Studies for Clarinet do Kroepsch. De Eb major até ...",
+    href: "/method/kroepsch/book-2"
   },
   {
     id: 3,
     title: "Livro 3",
     subtitle: "40 Exercícios",
     level: "Hitman",
-    description: "Estudos difíceis cobrindo saltos de grandes intervalos, passagens virtuosas e articulações desafiadoras.",
-    href: "/method/kroepsch/3"
+    description: "Estudos para todas as escalas. Os estudos seguem a forma I - VI - IV - V - I",
+    href: "/method/kroepsch/book-3"
   },
   {
     id: 4,
@@ -41,7 +42,15 @@ const books = [
     subtitle: "26 Exercícios",
     level: "Mafia Boss",
     description: "Os estudos mais exigentes projetados para o domínio profissional do clarinete.",
-    href: "/method/kroepsch/4"
+    href: "/method/kroepsch/book-4"
+  },
+  {
+    id: 5,
+    title: "Mini Kroepsch",
+    subtitle: "138 Exercícios",
+    level: "Crook",
+    description: "Livro pequeno com etudes divertidos para estudantes de todos os níveis",
+    href: "/method/kroepsch/book-5"
   }
 ];
 
@@ -60,13 +69,13 @@ export default function MethodPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {books.map((book) => (
           <Card key={book.id} className="flex flex-col h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
               <div className="flex items-center justify-between mb-2">
                 <CardTitle className="text-2xl font-bold">{book.title}</CardTitle>
-                <Badge variant={book.id === 1 ? "secondary" : book.id === 2 ? "default" : book.id === 3 ? "destructive" : "outline"} className="ml-2">
+                <Badge variant={"outline"} className="ml-2">
                   {book.level}
                 </Badge>
               </div>
