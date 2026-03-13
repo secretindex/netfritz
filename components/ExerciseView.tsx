@@ -95,7 +95,7 @@ const ExerciseView = () => {
 
   return (
     <div className="flex justify-center items-center w-2/4">
-      <div className="w-full flex flex-col justify-center gap-8 items-center max-w-full border border-gray-200 rounded-lg p-4">
+      <div className="w-full flex flex-col justify-center gap-4 items-center max-w-full border border-gray-200 rounded-lg p-4">
         <div>
           <div className="flex justify-between items-center">
             <Button
@@ -120,7 +120,7 @@ const ExerciseView = () => {
             height={800}
           />
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center">
           <Button variant={finished ? "default" : "outline"} className={`w-full ${finished ? "bg-green-500 hover:bg-green-600" : ""}`} onClick={finishExercise}>
             {finished ? "Desmarcar como feito" : "Marcar como feito"}
           </Button>
